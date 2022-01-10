@@ -16,7 +16,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(210, 255, 173);
+    background(255, 255, 255);
   }
 
   /**
@@ -24,13 +24,29 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
+    background(100);
     stroke(255);
-    line(50, 125, 70, 50);  
+
+    //quadrant 1
+    for (int i = 20; i <= 200; i += 20) {
+      line(i, 0, i, 200);
+      line(0, i, 200, i);
+    }
+
+    // quadrant 2
+    for (int circleY = 50; circleY <= 150; circleY += 25) {
+      for (int circleX = 250; circleX <= 350; circleX += 25) {
+        ellipse(circleX, circleY, 15, 15);
+      }
+  }
+
+  // quadrant 3
+  strokeWeight(1);
+  for (int i = 0; i <= 200; i++){
+    stroke(i);
+    line(i, 200, i, 400);
   }
   
-  // define other methods down here.
+  
+}
 }
